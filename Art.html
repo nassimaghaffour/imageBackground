@@ -1,0 +1,40 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="ArtStyle.css">
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Liste des images de fond
+                var backgroundImages = [
+                    "./Art image/camera-2801675_1280.jpg",
+                    "./Art image/notes-2656005_1280.jpg",
+                
+                    // Ajoutez autant d'images que nécessaire
+                ];
+
+                // Fonction pour choisir une image aléatoire
+                function getRandomImage() {
+                    return backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+                }
+
+                // Mettre à jour le fond avec une image aléatoire
+                function updateBackground() {
+                    var randomImage = getRandomImage();
+                    document.body.style.backgroundImage = "url('" + randomImage + "')";
+                }
+
+                // Mettre à jour le fond au chargement initial
+                updateBackground();
+                
+
+                // Vous pouvez également mettre à jour le fond à des intervalles réguliers
+                 setInterval(updateBackground, 5000); // Par exemple, changer toutes les 5 secondes
+            });
+        </script>   
+    </body>
+    </html>
